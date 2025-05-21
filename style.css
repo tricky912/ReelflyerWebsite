@@ -122,7 +122,7 @@ body {
 .parallax {
   position: relative;
   overflow: hidden;
-  background: url('your-hero-image.jpg') center center / cover fixed;
+
   height: 80vh;
 }
 
@@ -233,10 +233,10 @@ body {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-.service-card h3 {
+h3 {
+	top:1rem;
   color: var(--primary);
   font-size: 1.5rem;
-  margin-bottom: 1rem;
 }
 
 .service-card p {
@@ -255,21 +255,36 @@ body {
   
 }
 
-.about-simple .container {
-  max-width: 800px;
-  margin: 0 auto;
+.about-simple {
+  background-color: #f8f4ef;
+  padding: 4rem 2rem;
+  text-align: center;
 }
-
-.about-simple h2 {
-  font-size: 2.5rem;
-  color: #c5a46d;                 /* your primary logo color */
+.about-text {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+.about-cards {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 280px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.card-icon {
+  height: 40px;
   margin-bottom: 1rem;
 }
-
-.about-simple p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #3e2d24;                 /* dark brown text */
+.card h3 {
+  color: #c5a46d;
+  margin-bottom: 0.5rem;
 }
 
 /* Simple Portfolio Section */
@@ -334,7 +349,7 @@ body {
   list-style: none;
   padding: 0;
   margin: 0 auto 2rem;
-  max-width: 500px;
+  max-width: 200px;
   text-align: left;
 }
 
@@ -539,4 +554,50 @@ body {
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50%      { transform: translateY(10px); opacity: 0.7; }
+}
+.typing-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  overflow: hidden;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.typing-box {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary);
+  white-space: nowrap;
+  position: relative;
+}
+
+#typed-text {
+  display: inline-block;
+  padding-right: 20px;
+}
+
+#cursor {
+  height: 150px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: left 0.1s ease;
+}
+#scrollingPhone {
+  position: fixed;     /* stay relative to the viewport */
+  right: 20px;         /* 20px from the right edge */
+  top: 100px;          /* initial vertical offset */
+  height: 60px;        /* adjust size */
+  z-index: 1000;       /* on top of other content */
+  pointer-events: none;/* clicks pass through */
+  transition: top 0.1s ease-out; /* smooth movement */
 }
