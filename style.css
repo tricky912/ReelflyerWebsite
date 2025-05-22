@@ -593,11 +593,50 @@ h3 {
   transition: left 0.1s ease;
 }
 #scrollingPhone {
-  position: fixed;     /* stay relative to the viewport */
-  right: 20px;         /* 20px from the right edge */
-  top: 100px;          /* initial vertical offset */
-  height: 60px;        /* adjust size */
-  z-index: 1000;       /* on top of other content */
-  pointer-events: none;/* clicks pass through */
-  transition: top 0.1s ease-out; /* smooth movement */
+  position: absolute;
+  right: 20px;
+  top: 0;
+  height: 60px;
+  z-index: 1000;
+  pointer-events: none;
+  transition: transform 0.1s ease-out;
+}
+.hamburger {
+  display: none;
+  background: none;
+  font-size: 2rem;
+  border: none;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .main-nav.active {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1rem 0;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+  }
 }
