@@ -21,27 +21,17 @@ document.addEventListener("DOMContentLoaded", () => {
   typeChar();
  
   const phone = document.getElementById("scrollingPhone");
-  if (!phone) return;
+if (!phone) return;
 
-  let currentTop = 100; // px from top when scrollY = 0
+let currentTop = 100;
+function animatePhone() {
+  const scrollY = window.scrollY;
+  const targetTop = 100 + scrollY * 1;
+  currentTop += (targetTop - currentTop) * 0.9; // Lower for smoother, higher for faster
+  phone.style.top = Math.round(currentTop) + "px";
+  requestAnimationFrame(animatePhone);
+}
+animatePhone();
 
-  function animatePhone() {
-    const scrollY   = window.scrollY; 
-    const targetTop = 100 + scrollY * 0.5; // adjust 0.5 to change pull strength
 
-    // Only move down (never up)
-    if (targetTop > currentTop) {
-      // ease the movement
-      currentTop += (targetTop - currentTop) * 0.1;
-      phone.style.top = currentTop + "px";
-    }
-
-    requestAnimationFrame(animatePhone);
-  }
-
-  animatePhone();
-  document.getElementById("hamburger").addEventListener("click", function () {
-    document.getElementById("navMenu").classList.toggle("active");
-  });
 });
-

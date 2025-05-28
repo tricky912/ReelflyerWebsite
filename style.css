@@ -277,6 +277,7 @@ h3 {
   padding: 1.5rem;
   max-width: 280px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* <--- add this line */
 }
 .card-icon {
   height: 40px;
@@ -585,15 +586,17 @@ h3 {
 }
 
 #cursor {
-  height: 150px;
+  height: 130px;
   position: absolute;
   top: 50%;
   left: 0;
+  margin-left:-10px;
   transform: translateY(-50%);
   transition: left 0.1s ease;
 }
 #scrollingPhone {
   position: absolute;
+  margin-top:50px;
   right: 20px;
   top: 0;
   height: 60px;
@@ -639,4 +642,14 @@ h3 {
   .nav-links a {
     font-size: 1.2rem;
   }
+}
+.about-cards {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
