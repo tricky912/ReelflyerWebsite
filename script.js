@@ -26,7 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
   hamburger.addEventListener("click", function () {
     navMenu.classList.toggle("active");
   });
- 
+ document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("active");
+  });
+});
+
   const phone = document.getElementById("scrollingPhone");
 if (!phone) return;
 
