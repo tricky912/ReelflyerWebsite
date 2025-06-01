@@ -33,6 +33,11 @@ body {
   --dark-brown: #3e2d20;
   --text-light: #ffffff;
 }
+@media (max-width: 768px) {
+  .hamburger { display: block; }
+  .main-nav { display: none; }
+  .main-nav.active { display: block; }
+}
 
 /* Header */
 /* Header (full width, sticky, flexible height) */
