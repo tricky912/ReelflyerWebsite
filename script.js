@@ -20,14 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   typeChar();
 
-  const hamburger = document.getElementById("hamburger");
-const navMenu = document.getElementById("navMenu");
+ const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("navMenu");
 
-if (hamburger && navMenu) {
-  hamburger.addEventListener("click", () => {
+  hamburger.addEventListener("click", function () {
     navMenu.classList.toggle("active");
   });
-}
  
   const phone = document.getElementById("scrollingPhone");
 if (!phone) return;
