@@ -618,22 +618,10 @@ h3 {
   cursor: pointer;
 }
 
+
 @media (max-width: 768px) {
   .main-nav {
     display: none;
-    flex-direction: column;
-    /* Add any mobile styles you want */
-  }
-  .main-nav.active {
-    display: flex;
-  }
-  .hamburger {
-    display: block;
-  }
-}
-
-  .main-nav {
-    display: flex;
     position: absolute;
     top: 100%;
     right: 0;
@@ -641,8 +629,27 @@ h3 {
     width: 100%;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    flex-direction: column;
+    z-index: 1001; /* make sure it stays above page content */
   }
-
+  .main-nav.active {
+    display: flex;
+  }
+	.hamburger {
+    display: block;
+  }
+}
+@media (min-width: 769px) {
+  .main-nav {
+    display: flex;
+    position: static;
+    background: transparent;
+    box-shadow: none;
+    width: auto;
+    text-align: left;
+    flex-direction: row;
+  }
+}
   .main-nav.active {
     display: flex;
   }
